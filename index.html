@@ -65,14 +65,36 @@
     button:hover {
       background: #0056b3;
     }
+
+    #cats {
+      display:block;
+    }
+    #cats span{
+      display:block;
+      border:1px solid black;
+      padding: 0.5em 0.5em 0.5em 0.5em;
+    }
   </style>
 </head>
 <body>
-<div style="display:block; text-align: center; margin-top: 2rem; z-index:999;">
-  <button id="nextBtn">Τυχαία Ερώτηση</button>
+<div id="cats" style="margin-top: 2rem; text-align: center;">
+  <label for="categorySelect"><strong>Επιλέξτε Ενότητα:</strong></label><br/>
+  <select id="categorySelect" onchange="handleCategoryChange()" style="padding: 0.5rem; font-size: 1rem; margin-top: 0.5rem;">
+    <option value="">-- Επιλέξτε --</option>
+    <option value="1">Ενότητα: Συνταγματικό Δίκαιο</option>
+    <option value="63">Ενότητα: Διοικητικό Δίκαιο</option>
+    <option value="143">Ενότητα: Ευρωπαϊκοί Θεσμοί και Δίκαιο</option>
+    <option value="198">Ενότητα: Οικονομικές Επιστήμες</option>
+    <option value="266">Ενότητα: Δημόσια Διοίκηση και Διαχείριση Ανθρώπινου Δυναμικού</option>
+    <option value="307">Ενότητα: Πληροφορική και Ψηφιακή Διακυβέρνηση</option>
+    <option value="360">Ενότητα: Σύγχρονη Ιστορία της Ελλάδος (1875 - σήμερα)</option>
+  </select>
 </div>
-<div style="display:block; text-align: center; margin-top: 2rem; z-index:999;">
+<div style="display:inline-block; text-align: center; margin-top: 2rem; z-index:999;">
   <button id="seqBtn">Επόμενη Ερώτηση</button>
+</div>
+<div style="display:inline-block; text-align: center; margin-top: 2rem; z-index:999;">
+  <button id="nextBtn">Τυχαία Ερώτηση (όλες οι κατηγορίες)</button>
 </div>
 
 <div class="question" id="quest1"><div class="ekfonisi">
@@ -2786,7 +2808,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Με καμπύλη κοίλη προς την αρχή των αξόνων </a></div>
 <div class="answer3">γ. Με καμπύλη κυρτή προς τη γραμμή των αξόνων </div>
 <div class="answer4">δ. Με καμπύλη γραμμικής μορφής θετικής κλίσης </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest202"><div class="ekfonisi">
@@ -2796,7 +2818,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Αλλαγή στην παραγωγικότητα των συντελεστών παραγωγής </a></div>
 <div class="answer3">γ. Αλλαγή στον συνδυασμό των ποσοτήτων των παραγόμενων προϊόντων </div>
 <div class="answer4">δ. Μεταβολή στις καταναλωτικές προτιμήσεις </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest203"><div class="ekfonisi">
@@ -2805,7 +2827,7 @@ div class="unit">
 <div class="answer2">β. Με καμπύλη κοίλη προς την αρχή των αξόνων </div>
 <div class="answer3">γ. Με καμπύλη κυρτή προς τη γραμμή των αξόνων </div>
 <div class="answer4">δ. Με καμπύλη γραμμικής μορφής θετικής κλίσης </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest204"><div class="ekfonisi">
@@ -2815,7 +2837,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Η ΚΠΔ της οικονομίας υποδοχής μετατοπίζεται προς τα πάνω και δεξιά </a></div>
 <div class="answer3">γ. Η ΚΠΔ της οικονομίας υποδοχής δεν επηρεάζεται </div>
 <div class="answer4">δ. Καμία από τις λοιπές προτάσεις δεν είναι σωστή </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest205"><div class="ekfonisi">
@@ -2824,7 +2846,7 @@ div class="unit">
 <div class="answer2">β. Στο οικονομικό σύστημα μέσω του οποίου η κατανομή των μέσων παραγωγής προσδιορίζεται από την εκάστοτε κυβέρνηση </div>
 <div class="answer3">γ. Στο οικονομικό σύστημα μέσω του οποίου η κατανομή των μέσων παραγωγής προσδιορίζεται από την πλειοψηφία της Βουλής κατά την ψήφιση του Κρατικού Προϋπολογισμού </div>
 <div class="answer4">δ. Στο οικονομικό σύστημα μέσω του οποίου η κατανομή των μέσων παραγωγής προσδιορίζεται μέσω δημοψηφίσματος </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest206"><div class="ekfonisi">
@@ -2834,7 +2856,7 @@ div class="unit">
 <div class="answer2">β. Μέσω της ανάγκης μεγιστοποίησης του ατομικού συμφέροντος </div>
 <div class="answer3">γ. Μέσω των δυνάμεων της αγοράς </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Μέσω κατευθύνσεων του κράτους </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest207"><div class="ekfonisi">
@@ -2844,7 +2866,7 @@ div class="unit">
 <div class="answer2">β. Μείωσης του αριθμού των καταναλωτών </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Αύξησης της τιμής του υποκατάστατου αγαθού </a></div>
 <div class="answer4">δ. Αύξησης της τιμής του συμπληρωματικού αγαθού </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest208"><div class="ekfonisi">
@@ -2853,7 +2875,7 @@ div class="unit">
 <div class="answer2">β. Να μειωθεί </div>
 <div class="answer3">γ. Να παραμείνει αμετάβλητη </div>
 <div class="answer4">δ. Να μηδενιστεί </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest209"><div class="ekfonisi">
@@ -2863,7 +2885,7 @@ div class="unit">
 <div class="answer2">β. Ελαστική ως προς το εισόδημα </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Ελαστική ως προς την τιμή </a></div>
 <div class="answer4">δ. Μοναδιαίας ελαστικότητας ως προς την τιμή </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest210"><div class="ekfonisi">
@@ -2873,7 +2895,7 @@ div class="unit">
 <div class="answer2">β. Έχουν αρνητική σχέση </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Έχουν θετική σχέση </a></div>
 <div class="answer4">δ. Η προκύπτουσα καμπύλη έχει αρνητική κλίση </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest211"><div class="ekfonisi">
@@ -2882,7 +2904,7 @@ div class="unit">
 <div class="answer2">β. Τη ζήτηση του προϊόντος </div>
 <div class="answer3">γ. Το εισόδημα των νοικοκυριών </div>
 <div class="answer4">δ. Το εισόδημα του παραγωγού </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest212"><div class="ekfonisi">
@@ -2891,7 +2913,7 @@ div class="unit">
 <div class="answer2">β. Η αύξηση των μισθών των εργαζομένων στην αυτοκινητοβιομηχανία </div>
 <div class="answer3">γ. Η αύξηση του φόρου στα αυτοκίνητα </div>
 <div class="answer4">δ. Η μείωση του αριθμού των παραγωγών αυτοκινήτων </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest213"><div class="ekfonisi">
@@ -2901,7 +2923,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Στη μείωση του εισοδήματος των καταναλωτών </a></div>
 <div class="answer3">γ. Στη μείωση του κόστους παραγωγής υποδημάτων </div>
 <div class="answer4">δ. Στην αυξημένη ένταση της επιθυμίας των καταναλωτών για αγορά υποδημάτων </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest214"><div class="ekfonisi">
@@ -2910,7 +2932,7 @@ div class="unit">
 <div class="answer2">β. Αύξηση της τιμής ενός συμπληρωματικού αγαθού </div>
 <div class="answer3">γ. Αύξηση του πληθυσμού </div>
 <div class="answer4">δ. Μείωση της τιμής του αγαθού </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest215"><div class="ekfonisi">
@@ -2920,7 +2942,7 @@ div class="unit">
 <div class="answer2">β. Το πραγματικό ΑΕΠ (Ακαθάριστο Εγχώριο Προϊόν) αυξάνεται όταν αυξάνεται το επίπεδο των τιμών </div>
 <div class="answer3">γ. Το πραγματικό ΑΕΠ (Ακαθάριστο Εγχώριο Προϊόν) αυξάνεται όταν αυξάνεται η ποιότητα, η ποσότητα των παραγόμενων αγαθών καθώς και το επίπεδο των τιμών </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Καμία από τις λοιπές προτάσεις δεν είναι ορθή </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest216"><div class="ekfonisi">
@@ -2930,7 +2952,7 @@ div class="unit">
 <div class="answer2">β. Παρέμεινε σταθερό </div>
 <div class="answer3">γ. Δεν επαρκούν τα δεδομένα για υπολογιστεί </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Μειώθηκε </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 
@@ -2942,7 +2964,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. 300€ </a></div>
 <div class="answer3">γ. 246,67€ </div>
 <div class="answer4">δ. 600€ </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest218"><div class="ekfonisi">
@@ -2952,7 +2974,7 @@ div class="unit">
 <div class="answer2">β. Το πραγματικό ΑΕΠ της οικονομίας θα διπλασιαστεί </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Το ονομαστικό ΑΕΠ της οικονομίας θα διπλασιαστεί </a></div>
 <div class="answer4">δ. Δεν θα υπάρξει καμία μεταβολή </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest219"><div class="ekfonisi">
@@ -2962,7 +2984,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. 2€ </a></div>
 <div class="answer3">γ. 3€ </div>
 <div class="answer4">δ. 6€ </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest220"><div class="ekfonisi">
@@ -2971,7 +2993,7 @@ div class="unit">
 <div class="answer2">β. Το ΑΕΠ ως δαπάνη, το ΑΕΠ ως εισόδημα, το ΑΕΠ ως εθνικό προϊόν </div>
 <div class="answer3">γ. Το ΑΕΠ ως πραγματικό, το ΑΕΠ ως δυνητικό, το ΑΕΠ ως ιδιωτικό </div>
 <div class="answer4">δ. Καμία από τις λοιπές απαντήσεις δεν είναι σωστή </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest221"><div class="ekfonisi">
@@ -2980,7 +3002,7 @@ div class="unit">
 <div class="answer2">β. Ο λόγος του πραγματικού προς το ονομαστικό ΑΕΠ </div>
 <div class="answer3">γ. Ο δείκτης που μετρά την αποτελεσματικότητα της δημοσιονομικής πολιτικής </div>
 <div class="answer4">δ. Ο δείκτης που μετρά την αποτελεσματικότητα της νομισματικής πολιτικής </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest222"><div class="ekfonisi">
@@ -2990,7 +3012,7 @@ div class="unit">
 <div class="answer2">β. Αποθηκεύεται για μεταγενέστερη πώληση </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Μένει αχρησιμοποίητο και πετιέται </a></div>
 <div class="answer4">δ. Πωλείται σε άλλες επιχειρήσεις </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest223"><div class="ekfonisi">
@@ -2999,7 +3021,7 @@ div class="unit">
 <div class="answer2">β. Πλήρης απασχόληση </div>
 <div class="answer3">γ. Εισόδημα ισορροπίας </div>
 <div class="answer4">δ. Ενεργός ζήτηση </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest224"><div class="ekfonisi">
@@ -3009,7 +3031,7 @@ div class="unit">
 <div class="answer2">β. Καθαρή επένδυση = ακαθάριστη επένδυση μείον καθαρές αμοιβές των συντελεστών παραγωγής. </div>
 <div class="answer3">γ. Καθαρή επένδυση = ακαθάριστη επένδυση μείον συσσώρευση αποθέματος. </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Καθαρή επένδυση = ακαθάριστη επένδυση μείον απόσβεση </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest225"><div class="ekfonisi">
@@ -3018,7 +3040,7 @@ div class="unit">
 <div class="answer2">β. Αύξηση των αποταμιεύσεων της οικονομίας </div>
 <div class="answer3">γ. Αύξηση του συνολικού αριθμού των μετοχών στο Χρηματιστήριο </div>
 <div class="answer4">δ. Αύξηση των ωρών λειτουργίας του κεφαλαίου σε ετήσια βάση </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest226"><div class="ekfonisi">
@@ -3028,7 +3050,7 @@ div class="unit">
 <div class="answer2">β. Των ατόμων που δεν εργάζονται συν τον αριθμό των απασχολουμένων κάτω από πέντε ώρες την εβδομάδα </div>
 <div class="answer3">γ. Των ατόμων που έχουν συνταξιοδοτηθεί ή σπουδάζουν </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Των ατόμων που δεν εργάζονται ούτε αναζητούν εργασία </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest227"><div class="ekfonisi">
@@ -3038,7 +3060,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Το άθροισμα της ανεργίας τριβής και της διαρθρωτικής ανεργίας </a></div>
 <div class="answer3">γ. Η διαρθρωτική ανεργία </div>
 <div class="answer4">δ. Το άθροισμα της ανεργίας τριβής, της διαρθρωτικής και της κυκλικής ανεργίας </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest228"><div class="ekfonisi">
@@ -3048,7 +3070,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Η ανεργία που εμφανίζεται κατά τη διάρκεια καθόδου του οικονομικού κύκλου </a></div>
 <div class="answer3">γ. Η ανεργία που αποκλίνει από το σημείο που αντιστοιχεί στην πλήρη απασχόληση </div>
 <div class="answer4">δ. Η αύξηση της Ανεργίας Τριβής </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest229"><div class="ekfonisi">
@@ -3058,7 +3080,7 @@ div class="unit">
 <div class="answer2">β. Μακροχρόνιας ανεργίας </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Διαρθρωτικής ανεργίας </a></div>
 <div class="answer4">δ. Ανεργίας τριβής </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest230"><div class="ekfonisi">
@@ -3067,7 +3089,7 @@ div class="unit">
 <div class="answer2">β. Είναι απογραφική και καλύπτει το σύνολο της χώρας </div>
 <div class="answer3">γ. Είναι απογραφική και διεξάγεται στις τρεις μεγάλες περιφέρειες της χώρας </div>
 <div class="answer4">δ. Είναι δειγματοληπτική αλλά ανά πενταετία απογραφική </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest231"><div class="ekfonisi">
@@ -3076,7 +3098,7 @@ div class="unit">
 <div class="answer2">β. Την ποσοστιαία μεταβολή των τιμών των ειδών διατροφής από την προηγούμενη περίοδο </div>
 <div class="answer3">γ. Την ποσοστιαία μεταβολή των τιμών των εισαγομένων προϊόντων από την προηγούμενη περίοδο </div>
 <div class="answer4">δ. Την ποσοστιαία μεταβολή του δείκτη τιμών καταναλωτή από την προηγούμενη περίοδο σε σχέση με τη μεταβολή μισθών και ημερομισθίων </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest232"><div class="ekfonisi">
@@ -3086,7 +3108,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Από την αύξηση της τιμής του φυσικού αερίου </a></div>
 <div class="answer3">γ. Από μείωση της φορολογίας </div>
 <div class="answer4">δ. Από την αύξηση της ποσότητας χρήματος </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest233"><div class="ekfonisi">
@@ -3095,7 +3117,7 @@ div class="unit">
 <div class="answer2">β. Δεν μπορεί να συνυπάρχει με την ανεργία </div>
 <div class="answer3">γ. Μπορεί να συνυπάρχει μόνον στην περίπτωση ανεργίας άνω του 15% </div>
 <div class="answer4">δ. Μπορεί να συνυπάρχει μόνον στην περίπτωση ανεργίας των νέων </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest234"><div class="ekfonisi">
@@ -3104,7 +3126,7 @@ div class="unit">
 <div class="answer2">β. Η μείωση της προσφοράς χρήματος </div>
 <div class="answer3">γ. Η μείωση των κρατικών δαπανών </div>
 <div class="answer4">δ. Η μείωση των εξαγωγών </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest235"><div class="ekfonisi">
@@ -3114,7 +3136,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Ο Δείκτης Τιμών Καταναλωτή (ΔΤΚ) </a></div>
 <div class="answer3">γ. Το ποσοστό ανεργίας </div>
 <div class="answer4">δ. Η συναλλαγματική ισοτιμία </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest236"><div class="ekfonisi">
@@ -3124,7 +3146,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. 20 % </a></div>
 <div class="answer3">γ. 10% </div>
 <div class="answer4">δ. 15% </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest237"><div class="ekfonisi">
@@ -3134,7 +3156,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Πληρώνονται καλά σε σχέση με τις εναλλακτικές ευκαιρίες απασχόλησης </a></div>
 <div class="answer3">γ. Πληρώνονται λίγο </div>
 <div class="answer4">δ. Απολαμβάνουν τον κίνδυνο </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest238"><div class="ekfonisi">
@@ -3144,7 +3166,7 @@ div class="unit">
 <div class="answer2">β. Αύξηση των δαπανών για δημόσια έργα </div>
 <div class="answer3">γ. Ονομαστική αύξηση συντάξεων </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Κανένα από τα λοιπά μέτρα </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest239"><div class="ekfonisi">
@@ -3153,7 +3175,7 @@ div class="unit">
 <div class="answer2">β. Χρησιμοποιεί την δημοσιονομική πολιτική για να μειώσει την συνολική ζήτηση </div>
 <div class="answer3">γ. Χρησιμοποιεί την νομισματική πολιτική για να αυξήσει την συνολική ζήτηση </div>
 <div class="answer4">δ. Οι μεταβολές στην προσφορά χρήματος δεν επηρεάζουν τη συνολική ζήτηση </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest240"><div class="ekfonisi">
@@ -3162,7 +3184,7 @@ div class="unit">
 <div class="answer2">β. Για την αντιμετώπιση του στασιμοπληθωρισμού </div>
 <div class="answer3">γ. Για την αντιμετώπιση της ύφεσης </div>
 <div class="answer4">δ. Για την αντιμετώπιση της ακρίβειας </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest241"><div class="ekfonisi">
@@ -3172,7 +3194,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Στην βραχυχρόνια αντίστροφη σχέση μεταξύ πληθωρισμού και ανεργίας </a></div>
 <div class="answer3">γ. Στην αντίστροφη σχέση μεταξύ των φορολογικών συντελεστών και φορολογικών εσόδων </div>
 <div class="answer4">δ. Στη σχέση άμεσων και έμμεσων φόρων </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest242"><div class="ekfonisi">
@@ -3182,7 +3204,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Η μείωση του ΦΠΑ στα υλικά οικοδομής </a></div>
 <div class="answer3">γ. Η ισόποση αύξηση φόρων στα καύσιμα </div>
 <div class="answer4">δ. Η δραστική αναλογική μείωση των συντάξεων </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest243"><div class="ekfonisi">
@@ -3192,7 +3214,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Την πλευρά της προσφοράς </a></div>
 <div class="answer3">γ. Τα έσοδα από τους άμεσους φόρους </div>
 <div class="answer4">δ. Τα έσοδα από τους έμμεσους φόρους </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest244"><div class="ekfonisi">
@@ -3202,7 +3224,7 @@ div class="unit">
 <div class="answer2">β. Αφορά στην ποιοτική αναβάθμιση του εκπαιδευτικού συστήματος </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Αφορά στην κάλυψη των αναγκών του παρόντος, λαμβάνοντας υπ’ όψη τις ανάγκες των μελλοντικών γενεών </a></div>
 <div class="answer4">δ. Αφορά στην ποιοτική αναβάθμιση των συστημάτων υγείας και την αύξηση του προσδόκιμου ζωής </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest245"><div class="ekfonisi">
@@ -3212,7 +3234,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Η επιδότηση φωτοβολταϊκών συστημάτων παροχής ενέργειας </a></div>
 <div class="answer3">γ. Η επιδότηση μονάδων παροχής ενέργειας φυσικού αερίου </div>
 <div class="answer4">δ. Η επιδότηση γεωτρήσεων για την εξόρυξη αργού πετρελαίου </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest246"><div class="ekfonisi">
@@ -3222,7 +3244,7 @@ div class="unit">
 <div class="answer2">β. Οικονομία-Ισότητα-Κοινωνία </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Περιβάλλον-Οικονομία-Κοινωνία </a></div>
 <div class="answer4">δ. Οικονομία-Περιβάλλον-Ισότητα </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest247"><div class="ekfonisi">
@@ -3232,7 +3254,7 @@ div class="unit">
 <div class="answer2">β. Του συνόλου των εσόδων του δημοσίου </div>
 <div class="answer3">γ. Του συνόλου του κρατικού προϋπολογισμού </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Του Ακαθάριστου Εγχώριου Προϊόντος (ΑΕΠ) </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest248"><div class="ekfonisi">
@@ -3242,7 +3264,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Τακτικό προϋπολογισμό και προϋπολογισμό δημοσίων επενδύσεων </a></div>
 <div class="answer3">γ. Τακτικό προϋπολογισμό και έκτακτο προϋπολογισμό </div>
 <div class="answer4">δ. Τακτικό προϋπολογισμό και απολογισμό </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest249"><div class="ekfonisi">
@@ -3252,7 +3274,7 @@ div class="unit">
 <div class="answer2">β. Για τις νεότερες γενιές (εκτός της τελευταίας) </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Και για τις παλαιότερες και για τις νεότερες γενιές (εκτός της τελευταίας) </a></div>
 <div class="answer4">δ. Ούτε για τις παλαιότερες, ούτε για τις νεότερες γενιές (εκτός της πρώτης και της τελευταίας  </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 
@@ -3264,7 +3286,7 @@ div class="unit">
 <div class="answer2">β. Άτομα που είναι παρόμοια μεταξύ τους, αλλά κάνουν τις ίδιες επιλογές στα οικονομικά ή στον τρόπο ζωής τους, θα πρέπει να αντιμετωπίζονται με τον ίδιο τρόπο από </div>το φορολογικό σύστημα 
 <div class="answer3"><a onclick="correct(this)";>γ. Άτομα με περισσότερους πόρους θα πρέπει να πληρώνουν υψηλότερους φόρους σε σχέση με άτομα με λιγότερους πόρους </a></div>
 <div class="answer4">δ. Άτομα με περισσότερους πόρους θα πρέπει να πληρώνουν τους ίδιους φόρους με άτομα με λιγότερους πόρους </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest251"><div class="ekfonisi">
@@ -3274,7 +3296,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Η αύξηση της προσφοράς χρήματος </a></div>
 <div class="answer3">γ. Η σταθεροποίηση της οικονομίας </div>
 <div class="answer4">δ. Η αναδιανομή του εισοδήματος </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest252"><div class="ekfonisi">
@@ -3284,7 +3306,7 @@ div class="unit">
 <div class="answer2">β. Η μείωση του μεγέθους του ευρύτερου δημόσιου τομέα </div>
 <div class="answer3">γ. Η εξασθένηση της δύναμης των εργατικών οργανώσεων </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Όλες οι λοιπές προτάσεις που παρατίθενται είναι σωστές </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest253"><div class="ekfonisi">
@@ -3294,7 +3316,7 @@ div class="unit">
 <div class="answer2">β. Έμμεσος και απρόσωπος φόρος </div>
 <div class="answer3">γ. Φόρος που επιβάλλεται από την κεντρική διοίκηση </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Όλες οι λοιπές προτάσεις που παρατίθενται είναι σωστές </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest254"><div class="ekfonisi">
@@ -3303,7 +3325,7 @@ div class="unit">
 <div class="answer2">β. Ο Ειδικός φόρος κατανάλωσης εντάσσεται στην κατηγορία των έμμεσων φόρων </div>
 <div class="answer3">γ. Ο Φόρος Προστιθέμενης Αξίας εντάσσεται στους απρόσωπους φόρους </div>
 <div class="answer4">δ. Ο Φόρος Περιουσίας αξίας είναι άμεσος φόρος </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest255"><div class="ekfonisi">
@@ -3313,7 +3335,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Άτομα που έχουν ίδια φοροδοτική ικανότητα πρέπει να φορολογούνται το ίδιο </a></div>
 <div class="answer3">γ. Άτομα που έχουν ίδιο εκπαιδευτικό επίπεδο πρέπει να φορολογούνται το ίδιο </div>
 <div class="answer4">δ. Όλες οι λοιπές προτάσεις είναι σωστές </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest256"><div class="ekfonisi">
@@ -3323,7 +3345,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Έμμεσος φόρος </a></div>
 <div class="answer3">γ. Φόρος κατά μονάδα προϊόντος </div>
 <div class="answer4">δ. Όλες οι λοιπές προτάσεις είναι σωστές </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest257"><div class="ekfonisi">
@@ -3333,7 +3355,7 @@ div class="unit">
 <div class="answer2">β. Ένας φόρος επί των πωλήσεων αυτοκινήτων </div>
 <div class="answer3">γ. Ένας φόρος στην εστίαση </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Ο φόρος κληρονομιάς </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest258"><div class="ekfonisi">
@@ -3343,7 +3365,7 @@ div class="unit">
 <div class="answer2">β. Ο συνολικός φόρος αυξάνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής αυξάνεται </div>
 <div class="answer3">γ. Ο συνολικός φόρος μειώνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής αυξάνεται </div>
 <div class="answer4"><a onclick="correct(this)";>δ. Ο συνολικός φόρος αυξάνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής μειώνεται </a></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest259"><div class="ekfonisi">
@@ -3353,7 +3375,7 @@ div class="unit">
 <div class="answer2">β. Η αδήλωτη εργασία. </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Η μεταφορά της φορολογικής έδρας στο Λουξεμβούργο </a></div>
 <div class="answer4">δ. Όλες οι λοιπές προτάσεις είναι σωστές </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest260"><div class="ekfonisi">
@@ -3363,7 +3385,7 @@ div class="unit">
 <div class="answer2">β. Το πρωτογενές έλλειμμα είναι ίσο του ελλείματος του προϋπολογισμού </div>
 <div class="answer3"><a onclick="correct(this)";>γ. Το πρωτογενές έλλειμμα είναι μικρότερο του ελλείματος του προϋπολογισμού </a></div>
 <div class="answer4">δ. Υπάρχουν και άλλοι παράγοντες που επηρεάζουν το πρωτογενές έλλειμμα οπότε δεν μπορούμε να απαντήσουμε </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest261"><div class="ekfonisi">
@@ -3373,7 +3395,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Η αύξηση της τιμής του αργού πετρελαίου </a></div>
 <div class="answer3">γ. Επιβολή ανώτατων τιμών στα προϊόντα που πουλάνε οι καντίνες των πλοίων </div>
 <div class="answer4">δ. Ο φόρος κατανάλωσης στα προϊόντα καπνού </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest262"><div class="ekfonisi">
@@ -3382,7 +3404,7 @@ div class="unit">
 <div class="answer2">β. Οι εργοδότες/τριες και το κοινωνικό σύνολο </div>
 <div class="answer3">γ. Οι εργαζόμενοι/ες </div>
 <div class="answer4">δ. Οι εργαζόμενοι/ες και οι εργοδότες/τριες </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest263"><div class="ekfonisi">
@@ -3391,7 +3413,7 @@ div class="unit">
 <div class="answer2">β. Επειδή είναι υπηρεσία χαμηλής τιμής κατανάλωσης </div>
 <div class="answer3">γ. Επειδή, λόγω του υψηλού κόστους παροχής της, καμία ιδιωτική ασφαλιστική εταιρεία δεν μπορεί να το παρέχει </div>
 <div class="answer4">δ. Καμία από τις λοιπές προτάσεις δεν είναι σωστή </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest264"><div class="ekfonisi">
@@ -3401,7 +3423,7 @@ div class="unit">
 <div class="answer2">γ. Μη-αμιγώς δημόσιο εφόσον υπάρχει δημόσια παροχή του </div>
 <div class="answer3"><a onclick="correct(this)";>δ. Αμιγώς δημόσιο </a></div>
 <div class="answer4"></div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 <div class="question" id="quest265"><div class="ekfonisi">
@@ -3411,7 +3433,7 @@ div class="unit">
 <div class="answer2"><a onclick="correct(this)";>β. Να χρηματοδοτήσουν δημόσια αγαθά και υπηρεσίες </a></div>
 <div class="answer3">γ. Να μειώσουν την κατανάλωση αγαθών και υπηρεσιών </div>
 <div class="answer4">δ. Να αυξήσουν τις αποταμιεύσεις των πολιτών </div>
-<div class="unit">Ενότητα: Οικονομικές ΕΠιστήμες</div>
+<div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
 
@@ -5046,8 +5068,8 @@ div class="unit">
 </div>
 
 
-  
-  <script>
+
+<script>
     const questions = Array.from(document.querySelectorAll('.question'));
     const visited = Array(questions.length).fill(0);
     
@@ -5113,12 +5135,27 @@ div class="unit">
     // Show first question
     showQuestion(currentIndex);
 
+    function goto(num){
+      currentIndex=num-1;
+      showQuestion(currentIndex);
+    }
+
     function correct(e){
       alert("Σωστό!!!");
       e.style.backgroundColor="green";
       e.style.color = "white";
       e.style.textDecoration="bold";
+      visited[currentIndex] = 1;
     }
+
+  function handleCategoryChange() {
+  const select = document.getElementById("categorySelect");
+  const value = select.value;
+
+  if (value) {
+    goto(parseInt(value));
+  }
+}
   </script>
 </body>
 </html>
