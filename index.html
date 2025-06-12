@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
   <style>
-    body {
+        body {
       font-family: Arial, sans-serif;
       padding: 1rem;
       background: #f9f9f9;
@@ -75,10 +75,10 @@
       padding: 0.5em 0.5em 0.5em 0.5em;
     }
   </style>
+
 </head>
 <body>
 <div id="cats" style="margin-top: 2rem; text-align: center;">
-  <label for="categorySelect"><strong>Επιλέξτε Ενότητα:</strong></label><br/>
   <select id="categorySelect" onchange="handleCategoryChange()" style="padding: 0.5rem; font-size: 1rem; margin-top: 0.5rem;">
     <option value="">-- Επιλέξτε --</option>
     <option value="1">Ενότητα: Συνταγματικό Δίκαιο</option>
@@ -91,10 +91,10 @@
   </select>
 </div>
 <div style="display:inline-block; text-align: center; margin-top: 2rem; z-index:999;">
-  <button id="seqBtn">Επόμενη Ερώτηση</button>
+  <button id="seqBtn" onclick="nextQuestion();">Επόμενη Ερώτηση</button>
 </div>
 <div style="display:inline-block; text-align: center; margin-top: 2rem; z-index:999;">
-  <button id="nextBtn">Τυχαία Ερώτηση (όλες οι κατηγορίες)</button>
+  <button id="randBtn" onclick="randQuestion();">Τυχαία Ερώτηση (όλες οι κατηγορίες)</button>
 </div>
 
 <div class="question" id="quest1"><div class="ekfonisi">
@@ -1616,8 +1616,8 @@ div class="unit">
 α. Η περίπτωση του προληπτικού και του κατασταλτικού ελέγχου </div>
 <div class="answer2">
 β. Η περίπτωση του ελέγχου σκοπιμότητας και νομιμότητας </div>
-<div class="answer3">
-γ. Η περίπτωση της ιεραρχικής υποκατάστασης, όταν ρητά προβλέπεται σε διάταξη νόμου <a onclick="correct(this)";></a></div>
+<div class="answer3" onclick="correct(this);">
+γ. Η περίπτωση της ιεραρχικής υποκατάστασης, όταν ρητά προβλέπεται σε διάταξη νόμου</div>
 <div class="answer4">
 δ. Όλες οι λοιπές απαντήσεις </div>
 <div class="unit">
@@ -1920,7 +1920,7 @@ div class="unit">
 
 <div class="question" id="quest135"><div class="ekfonisi">
 73. Ως Γραμματέας Αποκεντρωμένης Διοίκησης μπορεί να επιλεγεί: </div>
-<div class="answer1">
+<div class="answer1" onclick="correct(this);">
 α. Τόσο δημόσιος/α υπάλληλος όσο και ιδιώτης </div>
 <div class="answer2">
 β. Μόνο ιδιώτης </div>
@@ -2805,7 +2805,7 @@ div class="unit">
 4. Με ποιόν από τους παρακάτω τρόπους απεικονίζεται η Καμπύλη Παραγωγικών Δυνατοτήτων στην περίπτωση αυξανόμενου κόστους ευκαιρίας; </div>
 <div class="answer1">
 α. Με καμπύλη γραμμικής μορφής αρνητικής κλίσης </div>
-<div class="answer2"><a onclick="correct(this)";>β. Με καμπύλη κοίλη προς την αρχή των αξόνων </a></div>
+<div class="answer2" onclick="correct(this)";>β. Με καμπύλη κοίλη προς την αρχή των αξόνων </a></div>
 <div class="answer3">γ. Με καμπύλη κυρτή προς τη γραμμή των αξόνων </div>
 <div class="answer4">δ. Με καμπύλη γραμμικής μορφής θετικής κλίσης </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -2815,7 +2815,7 @@ div class="unit">
 5. Μία μετατόπιση της καμπύλης παραγωγικών δυνατοτήτων μίας οικονομίας μπορεί να προκληθεί από: </div>
 <div class="answer1">
 α. Πληθωρισμό </div>
-<div class="answer2"><a onclick="correct(this)";>β. Αλλαγή στην παραγωγικότητα των συντελεστών παραγωγής </a></div>
+<div class="answer2" onclick="correct(this);">β. Αλλαγή στην παραγωγικότητα των συντελεστών παραγωγής </a></div>
 <div class="answer3">γ. Αλλαγή στον συνδυασμό των ποσοτήτων των παραγόμενων προϊόντων </div>
 <div class="answer4">δ. Μεταβολή στις καταναλωτικές προτιμήσεις </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -2834,7 +2834,7 @@ div class="unit">
 7. Ποια από τις ακόλουθες προτάσεις είναι αληθής σχετικά με την επίδραση της εισροής οικονομικών μεταναστών από το εξωτερικό στην καμπύλη παραγωγικών δυνατοτήτων (ΚΠΔ) της οικονομίας </div>
 <div class="answer1">υποδοχής; 
 α. Η ΚΠΔ της οικονομίας υποδοχής μετατοπίζεται προς τα κάτω και αριστερά </div>
-<div class="answer2"><a onclick="correct(this)";>β. Η ΚΠΔ της οικονομίας υποδοχής μετατοπίζεται προς τα πάνω και δεξιά </a></div>
+<div class="answer2" onclick="correct(this);">β. Η ΚΠΔ της οικονομίας υποδοχής μετατοπίζεται προς τα πάνω και δεξιά </a></div>
 <div class="answer3">γ. Η ΚΠΔ της οικονομίας υποδοχής δεν επηρεάζεται </div>
 <div class="answer4">δ. Καμία από τις λοιπές προτάσεις δεν είναι σωστή </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -2855,7 +2855,7 @@ div class="unit">
 α. Μέσω ενεργειών των καταναλωτών </div>
 <div class="answer2">β. Μέσω της ανάγκης μεγιστοποίησης του ατομικού συμφέροντος </div>
 <div class="answer3">γ. Μέσω των δυνάμεων της αγοράς </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Μέσω κατευθύνσεων του κράτους </a></div>
+<div class="answer4" onclick="correct(this);">δ. Μέσω κατευθύνσεων του κράτους </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -2864,7 +2864,7 @@ div class="unit">
 <div class="answer1">
 α. Μείωσης του εισοδήματος του καταναλωτή </div>
 <div class="answer2">β. Μείωσης του αριθμού των καταναλωτών </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Αύξησης της τιμής του υποκατάστατου αγαθού </a></div>
+<div class="answer3" onclick="correct(this);">γ. Αύξησης της τιμής του υποκατάστατου αγαθού </a></div>
 <div class="answer4">δ. Αύξησης της τιμής του συμπληρωματικού αγαθού </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -2883,7 +2883,7 @@ div class="unit">
 <div class="answer1">
 α. Ανελαστική ως προς την τιμή </div>
 <div class="answer2">β. Ελαστική ως προς το εισόδημα </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Ελαστική ως προς την τιμή </a></div>
+<div class="answer3" onclick="correct(this);">γ. Ελαστική ως προς την τιμή </a></div>
 <div class="answer4">δ. Μοναδιαίας ελαστικότητας ως προς την τιμή </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -2893,7 +2893,7 @@ div class="unit">
 <div class="answer1">
 α. Είναι ανεξάρτητες η μια της άλλης </div>
 <div class="answer2">β. Έχουν αρνητική σχέση </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Έχουν θετική σχέση </a></div>
+<div class="answer3" onclick="correct(this);">γ. Έχουν θετική σχέση </a></div>
 <div class="answer4">δ. Η προκύπτουσα καμπύλη έχει αρνητική κλίση </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -2920,7 +2920,7 @@ div class="unit">
 16. Μια μετατόπιση της καμπύλης ζήτησης για υποδήματα προς τα αριστερά, μπορεί να οφείλεται: </div>
 <div class="answer1">
 α. Στη χρησιμοποίηση νέων πιο βελτιωμένων μηχανημάτων στην παραγωγή υποδημάτων </div>
-<div class="answer2"><a onclick="correct(this)";>β. Στη μείωση του εισοδήματος των καταναλωτών </a></div>
+<div class="answer2" onclick="correct(this);">β. Στη μείωση του εισοδήματος των καταναλωτών </a></div>
 <div class="answer3">γ. Στη μείωση του κόστους παραγωγής υποδημάτων </div>
 <div class="answer4">δ. Στην αυξημένη ένταση της επιθυμίας των καταναλωτών για αγορά υποδημάτων </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -2941,7 +2941,7 @@ div class="unit">
 α. Το πραγματικό ΑΕΠ (Ακαθάριστο Εγχώριο Προϊόν) αυξάνεται αναλογικά με το ονομαστικό ΑΕΠ </div>
 <div class="answer2">β. Το πραγματικό ΑΕΠ (Ακαθάριστο Εγχώριο Προϊόν) αυξάνεται όταν αυξάνεται το επίπεδο των τιμών </div>
 <div class="answer3">γ. Το πραγματικό ΑΕΠ (Ακαθάριστο Εγχώριο Προϊόν) αυξάνεται όταν αυξάνεται η ποιότητα, η ποσότητα των παραγόμενων αγαθών καθώς και το επίπεδο των τιμών </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Καμία από τις λοιπές προτάσεις δεν είναι ορθή </a></div>
+<div class="answer4" onclick="correct(this);">δ. Καμία από τις λοιπές προτάσεις δεν είναι ορθή </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -2951,7 +2951,7 @@ div class="unit">
 α. Αυξήθηκε </div>
 <div class="answer2">β. Παρέμεινε σταθερό </div>
 <div class="answer3">γ. Δεν επαρκούν τα δεδομένα για υπολογιστεί </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Μειώθηκε </a></div>
+<div class="answer4" onclick="correct(this);">δ. Μειώθηκε </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -2961,7 +2961,7 @@ div class="unit">
 20. Υποθέστε ότι το ΑΕΠ αποτελείται από μακαρόνια και γάλα. Το 2024 πωλήθηκαν 100 πακέτα μακαρόνια προς 1,50€ ανά πακέτο και 150 κουτιά γάλα προς 1€ ανά κουτί. Μπορούμε να συμπεράνουμε ότι, για το 2024, το ονομαστικό ΑΕΠ είναι: </div>
 <div class="answer1">
 α. 200€ </div>
-<div class="answer2"><a onclick="correct(this)";>β. 300€ </a></div>
+<div class="answer2" onclick="correct(this);">β. 300€ </a></div>
 <div class="answer3">γ. 246,67€ </div>
 <div class="answer4">δ. 600€ </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -2972,7 +2972,7 @@ div class="unit">
 <div class="answer1">
 α. Η ικανότητα της οικονομίας για ικανοποίηση των αναγκών σε αγαθά και υπηρεσίες θα διπλασιαστεί </div>
 <div class="answer2">β. Το πραγματικό ΑΕΠ της οικονομίας θα διπλασιαστεί </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Το ονομαστικό ΑΕΠ της οικονομίας θα διπλασιαστεί </a></div>
+<div class="answer3" onclick="correct(this);">γ. Το ονομαστικό ΑΕΠ της οικονομίας θα διπλασιαστεί </a></div>
 <div class="answer4">δ. Δεν θα υπάρξει καμία μεταβολή </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -2981,7 +2981,7 @@ div class="unit">
 22. Ένας αγρότης παράγει σιτάρι και το πωλεί σε έναν μυλωνά για 1€. Ο μυλωνάς μετατρέπει το σιτάρι σε αλεύρι και το πωλεί σε έναν αρτοποιό για 3€. Ο αρτοποιός χρησιμοποιεί το αλεύρι για </div>
 <div class="answer1">να κάνει ψωμί και πωλεί το ψωμί για 6€. Η αξία που προστίθεται από τον μυλωνά είναι: 
 α. 1€ </div>
-<div class="answer2"><a onclick="correct(this)";>β. 2€ </a></div>
+<div class="answer2" onclick="correct(this);">β. 2€ </a></div>
 <div class="answer3">γ. 3€ </div>
 <div class="answer4">δ. 6€ </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3010,7 +3010,7 @@ div class="unit">
 <div class="answer1">όλες τις παρακάτω περιπτώσεις εκτός από όταν το ψωμί: 
 α. Πωλείται σε νοικοκυριά </div>
 <div class="answer2">β. Αποθηκεύεται για μεταγενέστερη πώληση </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Μένει αχρησιμοποίητο και πετιέται </a></div>
+<div class="answer3" onclick="correct(this);">γ. Μένει αχρησιμοποίητο και πετιέται </a></div>
 <div class="answer4">δ. Πωλείται σε άλλες επιχειρήσεις </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3030,7 +3030,7 @@ div class="unit">
 α. Καθαρή επένδυση = ακαθάριστη επένδυση μείον φόρους. </div>
 <div class="answer2">β. Καθαρή επένδυση = ακαθάριστη επένδυση μείον καθαρές αμοιβές των συντελεστών παραγωγής. </div>
 <div class="answer3">γ. Καθαρή επένδυση = ακαθάριστη επένδυση μείον συσσώρευση αποθέματος. </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Καθαρή επένδυση = ακαθάριστη επένδυση μείον απόσβεση </a></div>
+<div class="answer4" onclick="correct(this);">δ. Καθαρή επένδυση = ακαθάριστη επένδυση μείον απόσβεση </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3049,7 +3049,7 @@ div class="unit">
 α. Των ατόμων που δεν εργάζονται </div>
 <div class="answer2">β. Των ατόμων που δεν εργάζονται συν τον αριθμό των απασχολουμένων κάτω από πέντε ώρες την εβδομάδα </div>
 <div class="answer3">γ. Των ατόμων που έχουν συνταξιοδοτηθεί ή σπουδάζουν </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Των ατόμων που δεν εργάζονται ούτε αναζητούν εργασία </a></div>
+<div class="answer4" onclick="correct(this);">δ. Των ατόμων που δεν εργάζονται ούτε αναζητούν εργασία </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3057,7 +3057,7 @@ div class="unit">
 30. Ως Φυσικό Ποσοστό Ανεργίας ορίζεται: </div>
 <div class="answer1">
 α. Η ανεργία τριβής </div>
-<div class="answer2"><a onclick="correct(this)";>β. Το άθροισμα της ανεργίας τριβής και της διαρθρωτικής ανεργίας </a></div>
+<div class="answer2" onclick="correct(this);">β. Το άθροισμα της ανεργίας τριβής και της διαρθρωτικής ανεργίας </a></div>
 <div class="answer3">γ. Η διαρθρωτική ανεργία </div>
 <div class="answer4">δ. Το άθροισμα της ανεργίας τριβής, της διαρθρωτικής και της κυκλικής ανεργίας </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3067,7 +3067,7 @@ div class="unit">
 31. Ως Κυκλική Ανεργία αναφέρεται: </div>
 <div class="answer1">
 α. Η κυκλική αυξομείωση του αριθμού των εγγεγραμμένων ανέργων </div>
-<div class="answer2"><a onclick="correct(this)";>β. Η ανεργία που εμφανίζεται κατά τη διάρκεια καθόδου του οικονομικού κύκλου </a></div>
+<div class="answer2" onclick="correct(this);">β. Η ανεργία που εμφανίζεται κατά τη διάρκεια καθόδου του οικονομικού κύκλου </a></div>
 <div class="answer3">γ. Η ανεργία που αποκλίνει από το σημείο που αντιστοιχεί στην πλήρη απασχόληση </div>
 <div class="answer4">δ. Η αύξηση της Ανεργίας Τριβής </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3078,7 +3078,7 @@ div class="unit">
 <div class="answer1">καθεστώς. Ο Γ. είναι τυπικό παράδειγμα: 
 α. Κυκλικής ανεργίας </div>
 <div class="answer2">β. Μακροχρόνιας ανεργίας </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Διαρθρωτικής ανεργίας </a></div>
+<div class="answer3" onclick="correct(this);">γ. Διαρθρωτικής ανεργίας </a></div>
 <div class="answer4">δ. Ανεργίας τριβής </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3105,7 +3105,7 @@ div class="unit">
 35. Σε ποια από τις παρακάτω περιπτώσεις μπορεί να προκληθεί πληθωρισμός κόστους; </div>
 <div class="answer1">
 α. Από την αύξηση της παραγωγικότητας της εργασίας </div>
-<div class="answer2"><a onclick="correct(this)";>β. Από την αύξηση της τιμής του φυσικού αερίου </a></div>
+<div class="answer2" onclick="correct(this);">β. Από την αύξηση της τιμής του φυσικού αερίου </a></div>
 <div class="answer3">γ. Από μείωση της φορολογίας </div>
 <div class="answer4">δ. Από την αύξηση της ποσότητας χρήματος </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3133,7 +3133,7 @@ div class="unit">
 38. Ποιος είναι ο κύριος δείκτης μέτρησης του πληθωρισμού; </div>
 <div class="answer1">
 α. Το Ακαθάριστο Εγχώριο Προϊόν (ΑΕΠ) </div>
-<div class="answer2"><a onclick="correct(this)";>β. Ο Δείκτης Τιμών Καταναλωτή (ΔΤΚ) </a></div>
+<div class="answer2" onclick="correct(this);">β. Ο Δείκτης Τιμών Καταναλωτή (ΔΤΚ) </a></div>
 <div class="answer3">γ. Το ποσοστό ανεργίας </div>
 <div class="answer4">δ. Η συναλλαγματική ισοτιμία </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3143,7 +3143,7 @@ div class="unit">
 39. Σύμφωνα με τα στοιχεία της ΕΛΣΤΑΤ το ποσοστό των ατόμων που διαβιούν σε νοικοκυριά κάτω από το όριο της φτώχειας βρίσκεται κατά προσέγγιση στο επίπεδο του: </div>
 <div class="answer1">
 α. 25% </div>
-<div class="answer2"><a onclick="correct(this)";>β. 20 % </a></div>
+<div class="answer2" onclick="correct(this);">β. 20 % </a></div>
 <div class="answer3">γ. 10% </div>
 <div class="answer4">δ. 15% </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3153,7 +3153,7 @@ div class="unit">
 40. Οι εργαζόμενοι/ες που κάνουν επικίνδυνες εργασίες είναι τυπικά άτομα που: </div>
 <div class="answer1">
 α. Δεν μπορούν να βρουν δουλειά με καλύτερες συνθήκες </div>
-<div class="answer2"><a onclick="correct(this)";>β. Πληρώνονται καλά σε σχέση με τις εναλλακτικές ευκαιρίες απασχόλησης </a></div>
+<div class="answer2" onclick="correct(this);">β. Πληρώνονται καλά σε σχέση με τις εναλλακτικές ευκαιρίες απασχόλησης </a></div>
 <div class="answer3">γ. Πληρώνονται λίγο </div>
 <div class="answer4">δ. Απολαμβάνουν τον κίνδυνο </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3165,7 +3165,7 @@ div class="unit">
 α. Αύξηση του κατώτατου ημερομισθίου </div>
 <div class="answer2">β. Αύξηση των δαπανών για δημόσια έργα </div>
 <div class="answer3">γ. Ονομαστική αύξηση συντάξεων </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Κανένα από τα λοιπά μέτρα </a></div>
+<div class="answer4" onclick="correct(this);">δ. Κανένα από τα λοιπά μέτρα </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3191,7 +3191,7 @@ div class="unit">
 44. Σε τι αναφέρεται η καμπύλη Philips; </div>
 <div class="answer1">
 α. Στη σχέση ανάμεσα στο πραγματικό και το ονομαστικό ΑΕΠ </div>
-<div class="answer2"><a onclick="correct(this)";>β. Στην βραχυχρόνια αντίστροφη σχέση μεταξύ πληθωρισμού και ανεργίας </a></div>
+<div class="answer2" onclick="correct(this);">β. Στην βραχυχρόνια αντίστροφη σχέση μεταξύ πληθωρισμού και ανεργίας </a></div>
 <div class="answer3">γ. Στην αντίστροφη σχέση μεταξύ των φορολογικών συντελεστών και φορολογικών εσόδων </div>
 <div class="answer4">δ. Στη σχέση άμεσων και έμμεσων φόρων </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3201,7 +3201,7 @@ div class="unit">
 45. Ποιο από το παρακάτω μέτρα θεωρείτε ότι εντάσσεται σε ενδεδειγμένη πολιτική για την αντιμετώπιση του πληθωρισμού κόστους; </div>
 <div class="answer1">
 α. Η αύξηση των έμμεσων φόρων στον καπνό </div>
-<div class="answer2"><a onclick="correct(this)";>β. Η μείωση του ΦΠΑ στα υλικά οικοδομής </a></div>
+<div class="answer2" onclick="correct(this);">β. Η μείωση του ΦΠΑ στα υλικά οικοδομής </a></div>
 <div class="answer3">γ. Η ισόποση αύξηση φόρων στα καύσιμα </div>
 <div class="answer4">δ. Η δραστική αναλογική μείωση των συντάξεων </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3211,7 +3211,7 @@ div class="unit">
 46. Για την καταπολέμηση του πληθωρισμού κόστους ενδείκνυνται μέτρα τα οποία επηρεάζουν κυρίως: </div>
 <div class="answer1">
 α. Την πλευρά της ζήτησης της οικονομίας </div>
-<div class="answer2"><a onclick="correct(this)";>β. Την πλευρά της προσφοράς </a></div>
+<div class="answer2" onclick="correct(this);">β. Την πλευρά της προσφοράς </a></div>
 <div class="answer3">γ. Τα έσοδα από τους άμεσους φόρους </div>
 <div class="answer4">δ. Τα έσοδα από τους έμμεσους φόρους </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3222,7 +3222,7 @@ div class="unit">
 <div class="answer1">
 α. Αφορά στη διαχρονική αύξηση του πραγματικού ΑΕΠ (Ακαθάριστο Εγχώριο Προϊόν) </div>
 <div class="answer2">β. Αφορά στην ποιοτική αναβάθμιση του εκπαιδευτικού συστήματος </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Αφορά στην κάλυψη των αναγκών του παρόντος, λαμβάνοντας υπ’ όψη τις ανάγκες των μελλοντικών γενεών </a></div>
+<div class="answer3" onclick="correct(this);">γ. Αφορά στην κάλυψη των αναγκών του παρόντος, λαμβάνοντας υπ’ όψη τις ανάγκες των μελλοντικών γενεών </a></div>
 <div class="answer4">δ. Αφορά στην ποιοτική αναβάθμιση των συστημάτων υγείας και την αύξηση του προσδόκιμου ζωής </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3231,7 +3231,7 @@ div class="unit">
 48. Ποιο από τα παρακάτω μέτρα θεωρείτε ότι αποτελεί υποστηρικτικό μέτρο βιώσιμης ανάπτυξης; </div>
 <div class="answer1">
 α. Η μείωση του κόστους ζωής που προέρχεται από επιδότηση μονάδας παραγωγής ενέργειας με λιγνίτη </div>
-<div class="answer2"><a onclick="correct(this)";>β. Η επιδότηση φωτοβολταϊκών συστημάτων παροχής ενέργειας </a></div>
+<div class="answer2" onclick="correct(this);">β. Η επιδότηση φωτοβολταϊκών συστημάτων παροχής ενέργειας </a></div>
 <div class="answer3">γ. Η επιδότηση μονάδων παροχής ενέργειας φυσικού αερίου </div>
 <div class="answer4">δ. Η επιδότηση γεωτρήσεων για την εξόρυξη αργού πετρελαίου </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3242,7 +3242,7 @@ div class="unit">
 <div class="answer1">
 α. Περιβάλλον-Οικονομία-Ισότητα </div>
 <div class="answer2">β. Οικονομία-Ισότητα-Κοινωνία </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Περιβάλλον-Οικονομία-Κοινωνία </a></div>
+<div class="answer3" onclick="correct(this);">γ. Περιβάλλον-Οικονομία-Κοινωνία </a></div>
 <div class="answer4">δ. Οικονομία-Περιβάλλον-Ισότητα </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3253,7 +3253,7 @@ div class="unit">
 α. Του συνόλου των δαπανών του δημοσίου </div>
 <div class="answer2">β. Του συνόλου των εσόδων του δημοσίου </div>
 <div class="answer3">γ. Του συνόλου του κρατικού προϋπολογισμού </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Του Ακαθάριστου Εγχώριου Προϊόντος (ΑΕΠ) </a></div>
+<div class="answer4" onclick="correct(this);">δ. Του Ακαθάριστου Εγχώριου Προϊόντος (ΑΕΠ) </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3261,7 +3261,7 @@ div class="unit">
 51. Ο ετήσιος Κρατικός Προϋπολογισμός διακρίνεται σε: </div>
 <div class="answer1">
 α. Προϋπολογισμό υπουργείων και προϋπολογισμό οργανισμών τοπικής αυτοδιοίκησης </div>
-<div class="answer2"><a onclick="correct(this)";>β. Τακτικό προϋπολογισμό και προϋπολογισμό δημοσίων επενδύσεων </a></div>
+<div class="answer2" onclick="correct(this);">β. Τακτικό προϋπολογισμό και προϋπολογισμό δημοσίων επενδύσεων </a></div>
 <div class="answer3">γ. Τακτικό προϋπολογισμό και έκτακτο προϋπολογισμό </div>
 <div class="answer4">δ. Τακτικό προϋπολογισμό και απολογισμό </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3272,7 +3272,7 @@ div class="unit">
 <div class="answer1">κεφαλαιοποιητικού συστήματος κοινωνικής ασφάλισης γίνονται σχετικά πιο συμφέρουσες: 
 α. Για τις παλαιότερες γενιές (εκτός της πρώτης) </div>
 <div class="answer2">β. Για τις νεότερες γενιές (εκτός της τελευταίας) </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Και για τις παλαιότερες και για τις νεότερες γενιές (εκτός της τελευταίας) </a></div>
+<div class="answer3" onclick="correct(this);">γ. Και για τις παλαιότερες και για τις νεότερες γενιές (εκτός της τελευταίας) </a></div>
 <div class="answer4">δ. Ούτε για τις παλαιότερες, ούτε για τις νεότερες γενιές (εκτός της πρώτης και της τελευταίας  </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3284,7 +3284,7 @@ div class="unit">
 <div class="answer1">
 α. Άτομα που είναι παρόμοια μεταξύ τους, αλλά κάνουν διαφορετικές επιλογές στα οικονομικά ή στον τρόπο ζωής τους, θα πρέπει να αντιμετωπίζονται με τον ίδιο τρόπο από το φορολογικό σύστημα </div>
 <div class="answer2">β. Άτομα που είναι παρόμοια μεταξύ τους, αλλά κάνουν τις ίδιες επιλογές στα οικονομικά ή στον τρόπο ζωής τους, θα πρέπει να αντιμετωπίζονται με τον ίδιο τρόπο από </div>το φορολογικό σύστημα 
-<div class="answer3"><a onclick="correct(this)";>γ. Άτομα με περισσότερους πόρους θα πρέπει να πληρώνουν υψηλότερους φόρους σε σχέση με άτομα με λιγότερους πόρους </a></div>
+<div class="answer3" onclick="correct(this);">γ. Άτομα με περισσότερους πόρους θα πρέπει να πληρώνουν υψηλότερους φόρους σε σχέση με άτομα με λιγότερους πόρους </a></div>
 <div class="answer4">δ. Άτομα με περισσότερους πόρους θα πρέπει να πληρώνουν τους ίδιους φόρους με άτομα με λιγότερους πόρους </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3293,7 +3293,7 @@ div class="unit">
 54. Ποια από τις παρακάτω ΔΕΝ αποτελεί λειτουργία του δημόσιου προϋπολογισμού: </div>
 <div class="answer1">
 α. Η ανάπτυξη της οικονομίας </div>
-<div class="answer2"><a onclick="correct(this)";>β. Η αύξηση της προσφοράς χρήματος </a></div>
+<div class="answer2" onclick="correct(this);">β. Η αύξηση της προσφοράς χρήματος </a></div>
 <div class="answer3">γ. Η σταθεροποίηση της οικονομίας </div>
 <div class="answer4">δ. Η αναδιανομή του εισοδήματος </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3305,7 +3305,7 @@ div class="unit">
 α. Η μείωση της φορολογίας </div>
 <div class="answer2">β. Η μείωση του μεγέθους του ευρύτερου δημόσιου τομέα </div>
 <div class="answer3">γ. Η εξασθένηση της δύναμης των εργατικών οργανώσεων </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Όλες οι λοιπές προτάσεις που παρατίθενται είναι σωστές </a></div>
+<div class="answer4" onclick="correct(this);">δ. Όλες οι λοιπές προτάσεις που παρατίθενται είναι σωστές </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3315,7 +3315,7 @@ div class="unit">
 α. Φόρος κατανάλωσης </div>
 <div class="answer2">β. Έμμεσος και απρόσωπος φόρος </div>
 <div class="answer3">γ. Φόρος που επιβάλλεται από την κεντρική διοίκηση </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Όλες οι λοιπές προτάσεις που παρατίθενται είναι σωστές </a></div>
+<div class="answer4" onclick="correct(this);">δ. Όλες οι λοιπές προτάσεις που παρατίθενται είναι σωστές </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3332,7 +3332,7 @@ div class="unit">
 58. Σύμφωνα με την αρχή της «οριζόντιας φορολογικής ισότητας»: </div>
 <div class="answer1">
 α. Τα πιο εύπορα άτομα πρέπει να φορολογούνται περισσότερο από τα λιγότερο εύπορα άτομα </div>
-<div class="answer2"><a onclick="correct(this)";>β. Άτομα που έχουν ίδια φοροδοτική ικανότητα πρέπει να φορολογούνται το ίδιο </a></div>
+<div class="answer2" onclick="correct(this);">β. Άτομα που έχουν ίδια φοροδοτική ικανότητα πρέπει να φορολογούνται το ίδιο </a></div>
 <div class="answer3">γ. Άτομα που έχουν ίδιο εκπαιδευτικό επίπεδο πρέπει να φορολογούνται το ίδιο </div>
 <div class="answer4">δ. Όλες οι λοιπές προτάσεις είναι σωστές </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3342,7 +3342,7 @@ div class="unit">
 59. Ο Φόρος Προστιθέμενης Αξίας είναι: </div>
 <div class="answer1">
 α. Προσωπικός φόρος </div>
-<div class="answer2"><a onclick="correct(this)";>β. Έμμεσος φόρος </a></div>
+<div class="answer2" onclick="correct(this);">β. Έμμεσος φόρος </a></div>
 <div class="answer3">γ. Φόρος κατά μονάδα προϊόντος </div>
 <div class="answer4">δ. Όλες οι λοιπές προτάσεις είναι σωστές </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3354,7 +3354,7 @@ div class="unit">
 α. Ένας ειδικός φόρος στα τσιγάρα </div>
 <div class="answer2">β. Ένας φόρος επί των πωλήσεων αυτοκινήτων </div>
 <div class="answer3">γ. Ένας φόρος στην εστίαση </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Ο φόρος κληρονομιάς </a></div>
+<div class="answer4" onclick="correct(this);">δ. Ο φόρος κληρονομιάς </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3364,7 +3364,7 @@ div class="unit">
 α. Ο συνολικός φόρος μειώνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής μειώνεται </div>
 <div class="answer2">β. Ο συνολικός φόρος αυξάνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής αυξάνεται </div>
 <div class="answer3">γ. Ο συνολικός φόρος μειώνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής αυξάνεται </div>
-<div class="answer4"><a onclick="correct(this)";>δ. Ο συνολικός φόρος αυξάνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής μειώνεται </a></div>
+<div class="answer4" onclick="correct(this);">δ. Ο συνολικός φόρος αυξάνεται, ο μέσος φορολογικός συντελεστής μειώνεται, ο οριακός φορολογικός συντελεστής μειώνεται </a></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
 
@@ -3373,7 +3373,7 @@ div class="unit">
 <div class="answer1">
 α. Η μη έκδοση φορολογικής απόδειξης. </div>
 <div class="answer2">β. Η αδήλωτη εργασία. </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Η μεταφορά της φορολογικής έδρας στο Λουξεμβούργο </a></div>
+<div class="answer3" onclick="correct(this);">γ. Η μεταφορά της φορολογικής έδρας στο Λουξεμβούργο </a></div>
 <div class="answer4">δ. Όλες οι λοιπές προτάσεις είναι σωστές </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3383,7 +3383,7 @@ div class="unit">
 <div class="answer1">
 α. Το πρωτογενές έλλειμμα είναι μεγαλύτερο του ελλείματος του προϋπολογισμού </div>
 <div class="answer2">β. Το πρωτογενές έλλειμμα είναι ίσο του ελλείματος του προϋπολογισμού </div>
-<div class="answer3"><a onclick="correct(this)";>γ. Το πρωτογενές έλλειμμα είναι μικρότερο του ελλείματος του προϋπολογισμού </a></div>
+<div class="answer3" onclick="correct(this);">γ. Το πρωτογενές έλλειμμα είναι μικρότερο του ελλείματος του προϋπολογισμού </a></div>
 <div class="answer4">δ. Υπάρχουν και άλλοι παράγοντες που επηρεάζουν το πρωτογενές έλλειμμα οπότε δεν μπορούμε να απαντήσουμε </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3392,7 +3392,7 @@ div class="unit">
 64. Ποιο από τα παρακάτω ΔΕΝ αποτελεί μέσο δράσης του κράτους; </div>
 <div class="answer1">
 α. Η αύξηση του βασικού επιτοκίου της μη ανεξάρτητης Κεντρικής Τράπεζας </div>
-<div class="answer2"><a onclick="correct(this)";>β. Η αύξηση της τιμής του αργού πετρελαίου </a></div>
+<div class="answer2" onclick="correct(this);">β. Η αύξηση της τιμής του αργού πετρελαίου </a></div>
 <div class="answer3">γ. Επιβολή ανώτατων τιμών στα προϊόντα που πουλάνε οι καντίνες των πλοίων </div>
 <div class="answer4">δ. Ο φόρος κατανάλωσης στα προϊόντα καπνού </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -3421,7 +3421,7 @@ div class="unit">
 <div class="answer1">
 β. Μη-αμιγώς δημόσιο </div>
 <div class="answer2">γ. Μη-αμιγώς δημόσιο εφόσον υπάρχει δημόσια παροχή του </div>
-<div class="answer3"><a onclick="correct(this)";>δ. Αμιγώς δημόσιο </a></div>
+<div class="answer3" onclick="correct(this);">δ. Αμιγώς δημόσιο </a></div>
 <div class="answer4"></div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
 </div>
@@ -3430,7 +3430,7 @@ div class="unit">
 68. Ποια από τις παρακάτω είναι η βασική λειτουργία των φόρων σε μια οικονομία; </div>
 <div class="answer1">
 α. Να αυξήσουν την ανισότητα στα εισοδήματα </div>
-<div class="answer2"><a onclick="correct(this)";>β. Να χρηματοδοτήσουν δημόσια αγαθά και υπηρεσίες </a></div>
+<div class="answer2" onclick="correct(this);">β. Να χρηματοδοτήσουν δημόσια αγαθά και υπηρεσίες </a></div>
 <div class="answer3">γ. Να μειώσουν την κατανάλωση αγαθών και υπηρεσιών </div>
 <div class="answer4">δ. Να αυξήσουν τις αποταμιεύσεις των πολιτών </div>
 <div class="unit">Ενότητα: Οικονομικές Επιστήμες</div>
@@ -4606,6 +4606,7 @@ div class="unit">
 <div class="answer4">
 δ. Το βαμβάκι </div>
 <div class="unit">Ενότητα: Σύγχρονη Ιστορία της Ελλάδος (1875 - σήμερα)</div>
+</div>
 
 <div class="question" id="quest363"><div class="ekfonisi">
 4. Ποιος ήταν ο επιφανέστερος αγωνιστής του Μακεδονικού Αγώνα στη δεκαετία του 1900 που έχασε τη ζωή του στον αγώνα αυτό; </div>
@@ -5066,96 +5067,46 @@ div class="unit">
 δ. Τέσσερα (4) </div>
 <div class="unit">Ενότητα: Σύγχρονη Ιστορία της Ελλάδος (1875 - σήμερα)</div>
 </div>
-
-
-
 <script>
-    const questions = Array.from(document.querySelectorAll('.question'));
-    const visited = Array(questions.length).fill(0);
-    
-    let currentIndex = 0;
+  function showQuestion(c){
 
-
-    function showQuestion(index) {
-      questions.forEach(q => q.classList.remove('active'));
-      if (questions[index]) {
-        questions[index].classList.add('active');
-      }
-    }
-
-    document.getElementById('seqBtn').addEventListener('click', () => {
-      currentIndex++;
-      if (currentIndex < questions.length) {
-        showQuestion(currentIndex);
-      } else {
-        let foundblank = false;
-        for (let i=0; i<visited.length; i++){
-          if (!visited[i]){
-            currentIndex=i;
-            showQuestion(currentIndex);
-            foundblank = true;
-            break;
-          }
-        }
-        if (!foundblank){
-          currentIndex = 0;
-          showQuestion(currentIndex);
-        }
-      }
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      currentIndex = Math.floor(Math.random() * questions.length);
-      counter = 0;
-      while (visited[currentIndex] && counter < 100){
-        currentIndex = Math.floor(Math.random() * questions.length);
-      }
-      if (!visited[currentIndex]){
-        showQuestion(currentIndex);
-      }
-      else{
-        let foundblank = false;
-        for (let i=0; i<visited.length; i++){
-          if (!visited[i]){
-            currentIndex=i;
-            showQuestion(currentIndex);
-            foundblank = true;
-            break;
-          }
-        }
-        if (!foundblank){
-          currentIndex = 0;
-          showQuestion(currentIndex);
-        }
-      }
+    for (var i=0; i<document.getElementsByClassName("question").length; i++){
       
-    });
-
-
-    // Show first question
-    showQuestion(currentIndex);
-
-    function goto(num){
-      currentIndex=num-1;
-      showQuestion(currentIndex);
+      document.getElementsByClassName("question")[i].style.display="none";
+      console.log(document.getElementsByClassName("question")[i].style.display);
     }
+    document.getElementById("quest"+(c+1).toString()).style.display = "block";
+    console.log("quest"+(c+1).toString());
+  }
+  function nextQuestion(){
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  }
 
-    function correct(e){
-      alert("Σωστό!!!");
-      e.style.backgroundColor="green";
-      e.style.color = "white";
-      e.style.textDecoration="bold";
-      visited[currentIndex] = 1;
-    }
+  function randQuestion(){
+    currentQuestion = Math.floor(Math.random()*document.getElementsByClassName("question").length);
+    showQuestion(currentQuestion);
+  }
 
   function handleCategoryChange() {
-  const select = document.getElementById("categorySelect");
-  const value = select.value;
+    const select = document.getElementById("categorySelect");
+    const value = select.value;
 
-  if (value) {
-    goto(parseInt(value));
+    if (value) {
+      currentQuestion = parseInt(value)-1;
+      showQuestion(currentQuestion);
+    }
   }
-}
-  </script>
+
+  function correct(e){
+    e.style.backgroundColor="lightgreen";
+    alert("Σωστό!!!!")
+  }
+
+
+  currentQuestion = 0;
+  showQuestion(0);
+
+</script>
 </body>
 </html>
