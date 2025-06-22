@@ -1,91 +1,3 @@
-<!DOCTYPE html>
-<html lang="el">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
-  <style>
-        body {
-      font-family: Arial, sans-serif;
-      padding: 1rem;
-      background: #f9f9f9;
-      margin: 0;
-    }
-    .question {
-      display: none;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .question.active {
-      display: block;
-    }
-    .ekfonisi {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    .answer1, .answer2, .answer3, .answer4 {
-      background: #eee;
-      padding: 0.5rem;
-      border-radius: 4px;
-      margin: 0.3rem 0;
-      cursor: pointer;
-    }
-    .answer1:hover, .answer2:hover, .answer3:hover, .answer4:hover {
-      background: #ddd;
-    }
-    .correct {
-      color: red;
-    }
-    .unit {
-      font-size: 0.9em;
-      color: gray;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border: none;
-      background: #007bff;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-    #cats {
-      display:block;
-    }
-    #cats span{
-      display:block;
-      border:1px solid black;
-      padding: 0.5em 0.5em 0.5em 0.5em;
-    }
-  </style>
-</head>
-<body>
-  <img style="display:none;" src="https://visitor-badge.laobi.icu/badge?page_id=dimnikolos.asepquest" alt="Visitor badge" />
-<div id="cats" style="margin-top: 2rem; text-align: center;">
-  <select id="categorySelect" onchange="handleCategoryChange()" style="padding: 0.5rem; font-size: 1rem; margin-top: 0.5rem;">
-    <option value="">-- Επιλέξτε --</option>
-    <option value="1">Ενότητα: Συνταγματικό Δίκαιο</option>
-    <option value="63">Ενότητα: Διοικητικό Δίκαιο</option>
-    <option value="143">Ενότητα: Ευρωπαϊκοί Θεσμοί και Δίκαιο</option>
-    <option value="198">Ενότητα: Οικονομικές Επιστήμες</option>
-    <option value="266">Ενότητα: Δημόσια Διοίκηση και Διαχείριση Ανθρώπινου Δυναμικού</option>
-    <option value="307">Ενότητα: Πληροφορική και Ψηφιακή Διακυβέρνηση</option>
-    <option value="360">Ενότητα: Σύγχρονη Ιστορία της Ελλάδος (1875 - σήμερα)</option>
-  </select>
-</div>
-<div style="display:inline-block; text-align: center; margin-top: 2rem; z-index:999;">
-  <button id="seqBtn" onclick="nextQuestion();">Επόμενη Ερώτηση</button>
-</div>
-<div style="display:inline-block; text-align: center; margin-top: 2rem; z-index:999;">
-  <button id="randBtn" onclick="randQuestion();">Τυχαία Ερώτηση (όλες οι κατηγορίες)</button>
-</div>
 <div class="question" id="quest1"><div class="ekfonisi">1.	Η έννοια της απαγόρευσης των βασανιστηρίων (άρθρο 7 παρ. 2 Συντ.) περιλαμβάνει: </div><div class="answer1" onclick="correct(this)";>α. Την απαγόρευση των βασανιστηρίων, της οποιασδήποτε σωματικής κάκωσης, της βλάβης υγείας, της άσκησης ψυχολογικής βίας και κάθε άλλης προσβολής της ανθρώπινης αξιοπρέπειας 
 </div><div class="answer2">β. Την απαγόρευση μόνο των βασανιστηρίων 
 </div><div class="answer3">γ. Την απαγόρευση μόνο της οποιασδήποτε σωματικής κάκωσης 
@@ -729,14 +641,12 @@
 </div><div class="answer3">γ. Υπάλληλος με σχέση αορίστου χρόνου 
 </div><div class="answer4">δ. Λειτουργός με σχέση αορίστου χρόνου ιδιωτικού δικαίου 
 </div><div class="unit">Ενότητα: Διοικητικό Δίκαιο 
-</div></div>
-<div class="question" id="quest130"><div class="ekfonisi">68.	Οι Περιφέρειες ασκούν αρμοδιότητες: </div><div class="answer1">α. Μόνο για τοπικές υποθέσεις 
+</div></div><div class="question" id="quest130"><div class="ekfonisi">68.	Οι Περιφέρειες ασκούν αρμοδιότητες: </div><div class="answer1">α. Μόνο για τοπικές υποθέσεις 
 </div><div class="answer2" onclick="correct(this)";>β. Για τοπικές αλλά και για κρατικές υποθέσεις 
-</div><div class="answer3">γ. Για όλες ανεξαιρέτως τις υποθέσεις που διεκπεραίωναν οι κρατικές περιφέρειες έως το 2010 
-</div><div class="answer4">δ. Αποκλειστικά για υποθέσεις που ανήκουν στο Υπουργείο Εσωτερικών </div>
-<div class="unit">Ενότητα: Διοικητικό Δίκαιο 
-</div></div>
-<div class="question" id="quest132"><div class="ekfonisi">69.	Στους ΟΤΑ, αιρετό όργανο με εκτελεστικό ρόλο είναι:  </div><div class="answer1">α. Ο/Η Δήμαρχος αλλά όχι ο/η Περιφερειάρχης                        
+</div><div class="answer3">γ. Για όλες ανεξαιρέτως τις υποθέσεις που διεκπεραίωναν οι κρατικές περιφέρειες έως το 
+</div><div class="question" id="quest131"><div class="ekfonisi">2010 </div><div class="answer4">δ. Αποκλειστικά για υποθέσεις που ανήκουν στο Υπουργείο Εσωτερικών 
+</div><div class="unit">Ενότητα: Διοικητικό Δίκαιο 
+</div></div><div class="question" id="quest132"><div class="ekfonisi">69.	Στους ΟΤΑ, αιρετό όργανο με εκτελεστικό ρόλο είναι:  </div><div class="answer1">α. Ο/Η Δήμαρχος αλλά όχι ο/η Περιφερειάρχης                        
 </div><div class="answer2" onclick="correct(this)";>β. Ο/Η Δήμαρχος και ο/η Περιφερειάρχης                  
 </div><div class="answer3">γ. Η δημοτική επιτροπή 
 </div><div class="answer4">δ. Ο/Η Πρόεδρος του δημοτικού συμβουλίου 
@@ -756,8 +666,7 @@
 </div><div class="answer3">γ. Γίνεται με αποκλειστικό κριτήριο την αποτελεσματικότητα 
 </div><div class="answer4">δ. Γίνεται με απόφαση του/της Γραμματέα/ως σε κάθε αποκεντρωμένη διοίκηση της χώρας 
 </div><div class="unit">Ενότητα: Διοικητικό Δίκαιο 
-</div></div>
-<div class="question" id="quest136"><div class="ekfonisi">73.	Η υποχρέωση συμμόρφωσης της διοίκησης σε δικαστικές αποφάσεις απορρέει:   </div><div class="answer1" onclick="correct(this)";>α. Από διατάξεις του Συντάγματος και γενικές αρχές του κράτους δικαίου   
+</div></div><div class="question" id="quest136"><div class="ekfonisi">73.	Η υποχρέωση συμμόρφωσης της διοίκησης σε δικαστικές αποφάσεις απορρέει:   </div><div class="answer1" onclick="correct(this)";>α. Από διατάξεις του Συντάγματος και γενικές αρχές του κράτους δικαίου   
 </div><div class="answer2">β. Από τη διοικητική πρακτική            
 </div><div class="answer3">γ. Από τις αποφάσεις της διοίκησης του φορέα συμμόρφωσης 
 </div><div class="answer4">δ. Από τις εγκυκλίους και τις οδηγίες των Υπουργείων σε συνάρτηση με τη δημοσιονομική δυνατότητα του φορέα συμμόρφωσης 
@@ -2099,46 +2008,3 @@
 </div><div class="answer4">δ. Δεν σημειώθηκε πρόωρη παραίτηση Προέδρου Δημοκρατίας 
 </div><div class="unit">Ενότητα: Σύγχρονη Ιστορία της Ελλάδος (1875-σήμερα) 
 </div></div>
-<script>
-  function showQuestion(c){
-
-    for (var i=0; i<document.getElementsByClassName("question").length; i++){
-      
-      document.getElementsByClassName("question")[i].style.display="none";
-      console.log(document.getElementsByClassName("question")[i].style.display);
-    }
-    document.getElementById("quest"+(c+1).toString()).style.display = "block";
-    console.log("quest"+(c+1).toString());
-  }
-  function nextQuestion(){
-    currentQuestion++;
-    showQuestion(currentQuestion);
-  }
-
-  function randQuestion(){
-    currentQuestion = Math.floor(Math.random()*document.getElementsByClassName("question").length);
-    showQuestion(currentQuestion);
-  }
-
-  function handleCategoryChange() {
-    const select = document.getElementById("categorySelect");
-    const value = select.value;
-
-    if (value) {
-      currentQuestion = parseInt(value)-1;
-      showQuestion(currentQuestion);
-    }
-  }
-
-  function correct(e){
-    e.style.backgroundColor="lightgreen";
-    alert("Σωστό!!!!")
-  }
-
-
-  currentQuestion = 0;
-  showQuestion(0);
-
-</script>
-</body>
-</html>
